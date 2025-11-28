@@ -2,30 +2,46 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  background: linear-gradient(135deg, #f4f4f4, #eaeaea);
   color: #333;
 }
+
+/* Quote Banner */
 .quote-banner {
-  background: #f39c12;
+  background: linear-gradient(90deg, #f39c12, #e67e22);
   color: white;
   text-align: center;
   padding: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
   font-style: italic;
+  animation: fadeIn 2s ease-in-out;
 }
 
+/* Header */
 header {
-  background: #2c3e50;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
   color: white;
   padding: 2rem;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  animation: slideDown 1.5s ease;
+}
+
+/* Navigation */
 nav {
   background: #34495e;
   padding: 1rem;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav ul {
@@ -40,32 +56,88 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
 }
 
+nav a:hover {
+  color: #f39c12;
+  transform: scale(1.1);
+}
+
+/* Sections */
 section {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
+  animation: fadeInUp 1.2s ease;
 }
 
+/* Skills */
 #skills-list li {
   background: #ecf0f1;
   margin: 0.5rem 0;
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 0.7rem;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+#skills-list li:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background: #dfe6e9;
+}
+
+/* Projects */
 #project-container .project {
   background: #fff;
   border: 1px solid #ccc;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#project-container .project:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Releases */
+#release-container .release {
+  background: #fdfdfd;
+  border-left: 5px solid #f39c12;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 5px;
+  transition: background 0.3s;
 }
 
+#release-container .release:hover {
+  background: #fff3e0;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #2c3e50;
+  background: linear-gradient(135deg, #2c3e50, #1a252f);
   color: white;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
